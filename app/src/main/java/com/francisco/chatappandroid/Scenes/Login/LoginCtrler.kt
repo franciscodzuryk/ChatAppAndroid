@@ -14,7 +14,7 @@ class LoginCtrler (var view: LoginViewInterface?, val apiUserClient: APIUserClie
         view = null
     }
 
-    private fun loginAction(user: User) {
+    fun loginAction(user: User) {
         val call: Call<User>
         call = apiUserClient.login(user)
         call.enqueue(object : Callback<User> {
@@ -26,7 +26,7 @@ class LoginCtrler (var view: LoginViewInterface?, val apiUserClient: APIUserClie
                     User.instance = user
                     view?.login(user)
                 } ?: run {
-                    view?.networkError(Error("Server Error. Try again later"))
+                    view?.networkError(Error("Error parsing User object on login method"))
                 }
 
             }

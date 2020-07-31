@@ -3,6 +3,9 @@ package com.francisco.chatappandroid.Scenes.Login
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.francisco.chatappandroid.MainActivity
@@ -22,6 +25,7 @@ interface LoginViewInterface {
 
 class LoginActivity : AppCompatActivity(), LoginViewInterface {
     private var loginCtrler: LoginCtrler? = null
+    private var textView: EditText? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +34,15 @@ class LoginActivity : AppCompatActivity(), LoginViewInterface {
         loginCtrler = LoginCtrler(this,
             APIBuilder().getRetrofitBuilder(APIUserClient::class.java),
             APIBuilder().getRetrofitBuilder(APICompanyClient::class.java))
+        val button = findViewById<Button>(R.id.loginButton)
+        textView = findViewById<EditText>(R.id.userNameEditText)
+        button.setOnClickListener(View.OnClickListener {
+            loginCtrler.let {
+                textView.let {
+                    loginCtrler!!.loginAction(User(textView!!.text.toString()))
+                }
+            }
+        })
     }
 
     override fun onDestroy() {
