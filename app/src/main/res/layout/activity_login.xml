@@ -11,13 +11,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="156dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="Nombre"
+        android:hint="Usuario"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,8 +29,50 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:text="Button"
+        android:text="Ingresar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userNameEditText" />
+
+    <Switch
+        android:id="@+id/switch_test"
+        android:layout_width="109dp"
+        android:layout_height="55dp"
+        android:switchTextAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.258"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="549dp" />
+
+    <Switch
+        android:id="@+id/swich_empresa"
+        android:layout_width="200dp"
+        android:layout_height="57dp"
+        android:autoText="false"
+        android:button="@android:drawable/checkbox_on_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="492dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Modo prueba"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.305"
+        app:layout_constraintStart_toEndOf="@+id/switch_test"
+        tools:layout_editor_absoluteY="568dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="65dp"
+        android:layout_height="21dp"
+        android:text="Empresa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/swich_empresa"
+        tools:layout_editor_absoluteY="514dp" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
