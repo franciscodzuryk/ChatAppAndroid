@@ -17,5 +17,8 @@ interface APIUserClient {
     fun sendMessage(@Body user: User): Call<User>
 
     @GET(value = "/user//message/")
-    fun getMessage(@Body user: User): Call<User>
+    fun getMessages(): Call<User>
+
+    @GET(value = "/user//message/")
+    fun getStatus(): Call<User>
 }
