@@ -36,43 +36,43 @@
 
     <Switch
         android:id="@+id/switch_test"
-        android:layout_width="109dp"
+        android:layout_width="110dp"
         android:layout_height="55dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
         android:switchTextAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.258"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="549dp" />
+        app:layout_constraintTop_toBottomOf="@+id/swich_empresa" />
 
     <Switch
         android:id="@+id/swich_empresa"
-        android:layout_width="200dp"
-        android:layout_height="57dp"
-        android:autoText="false"
-        android:button="@android:drawable/checkbox_on_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
+        android:layout_width="110dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="492dp" />
+        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
         android:text="Modo prueba"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.305"
         app:layout_constraintStart_toEndOf="@+id/switch_test"
-        tools:layout_editor_absoluteY="568dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="65dp"
         android:layout_height="21dp"
+        android:layout_marginTop="32dp"
         android:text="Empresa"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/swich_empresa"
-        tools:layout_editor_absoluteY="514dp" />
+        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
