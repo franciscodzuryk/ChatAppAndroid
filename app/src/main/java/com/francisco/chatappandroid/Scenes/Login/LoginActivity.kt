@@ -9,7 +9,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.francisco.chatappandroid.MainActivity
-import com.francisco.chatappandroid.Model.APIBuilder
+import com.francisco.chatappandroid.Network.APIBuilder
 import com.francisco.chatappandroid.Model.Company
 import com.francisco.chatappandroid.Model.User
 import com.francisco.chatappandroid.Network.APICompanyClient
@@ -24,23 +24,19 @@ interface LoginViewInterface {
 }
 
 class LoginActivity : AppCompatActivity(), LoginViewInterface {
-    private var loginCtrler: LoginCtrler? = null
+    private var loginCtrler = LoginCtrler(this,
+        APIBuilder().getRetrofitBuilder(APIUserClient::class.java),
+        APIBuilder().getRetrofitBuilder(APICompanyClient::class.java))
     private var textView: EditText? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        val builder = APIBuilder()
-        loginCtrler = LoginCtrler(this,
-            APIBuilder().getRetrofitBuilder(APIUserClient::class.java),
-            APIBuilder().getRetrofitBuilder(APICompanyClient::class.java))
         val button = findViewById<Button>(R.id.loginButton)
         textView = findViewById<EditText>(R.id.userNameEditText)
         button.setOnClickListener(View.OnClickListener {
-            loginCtrler.let {
-                textView.let {
-                    loginCtrler!!.loginAction(User(textView!!.text.toString()))
-                }
+            textView?.let {
+                loginCtrler.loginAction(User(it.text.toString()))
             }
         })
     }
