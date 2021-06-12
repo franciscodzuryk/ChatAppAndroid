@@ -22,13 +22,12 @@ class LoginCtrler (var view: LoginViewInterface?, val apiUserClient: APIUserClie
                 call: Call<User>,
                 response: Response<User>
             ) {
-                val user = response.body()?.let {
-                    User.instance = user
-                    view?.login(user)
+                response.body()?.let {
+                    User.instance = it
+                    view?.login(it)
                 } ?: run {
                     view?.networkError(Error("Error parsing User object on login method"))
                 }
-
             }
 
             override fun onFailure(call: Call<User>, t: Throwable) {
