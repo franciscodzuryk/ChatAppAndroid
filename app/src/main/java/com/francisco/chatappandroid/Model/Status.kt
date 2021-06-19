@@ -1,4 +1,4 @@
 package com.francisco.chatappandroid.Model
 
-class Status {
+class Status (val status: Int){
 }

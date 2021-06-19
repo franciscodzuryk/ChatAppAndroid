@@ -17,10 +17,17 @@ class MainActivity : AppCompatActivity(),AccionesFragmentos {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         showLogin()
-        btnRed.setOnClickListener { replaceFragment(RedFragment()) }
+        btnRed.setOnClickListener {
+            val fragment = RedFragment()
+            replaceFragment(fragment)
+        }
         btnBlue.setOnClickListener { replaceFragment(BlueFragment()) }
     }
 
+    override fun onResume() {
+        super.onResume()
+        println("Act ONResume")
+    }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 1) {

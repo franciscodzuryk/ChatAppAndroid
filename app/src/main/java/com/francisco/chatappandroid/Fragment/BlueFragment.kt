@@ -43,7 +43,10 @@ class BlueFragment : Fragment() {
         listener = null
     }
 
-
+    override fun onResume() {
+        super.onResume()
+        println("FragmentOnResume")
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
