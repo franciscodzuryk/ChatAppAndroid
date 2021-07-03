@@ -1,4 +1,4 @@
 package com.francisco.chatappandroid.Model
 
-class Message {
+class Message (val message: String){
 }
