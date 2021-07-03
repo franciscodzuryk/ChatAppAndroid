@@ -16,9 +16,6 @@ interface APIUserClient {
     @POST("/user/{id_user}/logout")
     fun logout(@Path("id_user") userId: Int, @Body user: User): Call<User>
 
-    @GET("/user")
-    fun userList(): Call<List<User>>
-
     @GET("/user/{id_user}/message")
     fun getMessages(@Path("id_user") userId: Int): Call<List<Message>>
 
